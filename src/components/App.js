@@ -6,6 +6,7 @@ import FormArea from './FormArea';
 import hogs from "../porkers_data";
 
 function App() {
+	console.log(hogs)
 
 	const [filterGreased, setFilterGreased] = useState(false);
 	const [sortFilter, setSortFilter] = useState('Unsorted');
