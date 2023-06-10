@@ -1,7 +1,7 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = ({ filterGreased, setFilterGreased, setSortFilter }) => {
+const Nav = ({ filterGreased, setFilterGreased, setSortFilter}) => {
 
 	function handleFilterGreased() {
 		setFilterGreased((prevGreasedStatus) => !prevGreasedStatus);

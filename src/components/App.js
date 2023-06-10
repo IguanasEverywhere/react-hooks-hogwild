@@ -50,6 +50,7 @@ function App() {
 				setSortFilter={setSortFilter}
 			/>
 			<HogArea hogs={sortFilter === 'Unsorted' ? unsortedHogs : filteredHogs } />
+
 			<FormArea />
 		</div>
 	);

@@ -8,7 +8,7 @@ function FormArea() {
     image: '',
     specialty: '',
     weight: '',
-    ['highest medal achieved']: 'Gold',
+    'highest medal achieved': 'Gold',
   })
 
   console.log(formData)
