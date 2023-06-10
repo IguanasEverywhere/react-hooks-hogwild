@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function FormArea() {
+function FormArea({addHog}) {
 
   const [formData, setFormData] = useState({
     name: '',
@@ -11,8 +11,6 @@ function FormArea() {
     'highest medal achieved': 'Gold',
   })
 
-  console.log(formData)
-
   function handleFormChange(e) {
     setFormData({
       ...formData,
@@ -20,8 +18,13 @@ function FormArea() {
     })
   }
 
+  function handleNewHogSubmit(e) {
+    e.preventDefault();
+    addHog(formData)
+  }
+
   return (
-    <form>
+    <form onSubmit={handleNewHogSubmit}>
       <input onChange={handleFormChange} name="name" placeholder="Name" value={formData.name}></input>
       <select onChange={handleFormChange} name="greased" value={formData.greased}>
         <option>True</option>

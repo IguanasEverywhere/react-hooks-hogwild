@@ -10,9 +10,11 @@ function App() {
 
 	const [filterGreased, setFilterGreased] = useState(false);
 	const [sortFilter, setSortFilter] = useState('Unsorted');
+	const [hogsToDisplay, setHogsToDisplay] = useState(hogs);
 
-	const filteredHogs = hogs.filter((hog) => filterGreased ? hog.greased : true);
+	const filteredHogs = hogsToDisplay.filter((hog) => filterGreased ? hog.greased : true);
 	let unsortedHogs = null;
+
 
 	function compareByName(a, b) {
 		if (a.name < b.name) {
@@ -42,6 +44,11 @@ function App() {
 		filteredHogs.sort(compareByWeight);
 	}
 
+	function addHog(newHog) {
+		console.log(newHog)
+		setHogsToDisplay([...hogsToDisplay, newHog]);
+	}
+
 	return (
 		<div className="App">
 			<Nav
@@ -51,7 +58,7 @@ function App() {
 			/>
 			<HogArea hogs={sortFilter === 'Unsorted' ? unsortedHogs : filteredHogs } />
 
-			<FormArea />
+			<FormArea addHog={addHog}/>
 		</div>
 	);
 }
